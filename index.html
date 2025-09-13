@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #4169e1; /* Un azul más vibrante */
-            --secondary-bg: #f5f5f5; /* Blanco o gris claro para el contenido */
-            --text-color: #333;
-            --header-color: #2c2c2c; /* Títulos más oscuros */
-            --link-color: #00a8cc; /* Cian para enlaces y acentos */
-            --active-tab-bg: #ffd700; /* Amarillo para la pestaña activa */
-            --tab-text-color: #fff; /* Texto de la pestaña inactiva */
+            --primary-bg: #f5f5f5; /* Gris cálido y suave para el fondo principal */
+            --secondary-bg: #fff; /* Blanco para el contenedor de contenido */
+            --text-color: #3d312a; /* Marrón oscuro para el texto */
+            --header-color: #3d312a; /* Marrón oscuro para títulos */
+            --link-color: #c85123; /* Terracota para enlaces y acentos */
+            --active-tab-bg: #c85123; /* Terracota para la pestaña activa */
+            --tab-text-color: #3d312a; /* Texto de la pestaña inactiva */
+            --active-tab-text-color: #fff; /* Texto de la pestaña activa */
             --font-family: 'Roboto', sans-serif;
             --skill-bg-color: #e0e0e0;
         }
@@ -36,7 +37,7 @@
         .container {
             background-color: var(--secondary-bg);
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             max-width: 800px;
             width: 100%;
@@ -52,7 +53,7 @@
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             text-align: center;
-            color: var(--text-color); /* Para el nombre principal */
+            color: var(--header-color);
         }
 
         h2 {
@@ -77,7 +78,7 @@
         }
 
         a:hover {
-            color: #007799;
+            color: #a0421e;
             text-decoration: underline;
         }
 
@@ -122,7 +123,7 @@
         .skill:hover {
             transform: translateY(-2px);
             background-color: var(--link-color);
-            color: #fff;
+            color: var(--active-tab-text-color);
         }
 
         /* Tabs Styling */
@@ -131,15 +132,15 @@
             justify-content: center;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
-            background-color: var(--primary-bg); /* Fondo de las pestañas */
-            padding: 0.5rem 0;
+            background-color: #e0e0e0; /* Fondo de las pestañas */
+            padding: 0.5rem;
             border-radius: 8px 8px 0 0;
             max-width: 800px;
             width: 100%;
         }
 
         .tab-button {
-            background-color: rgba(255, 255, 255, 0.2); /* Fondo de pestaña inactiva */
+            background-color: transparent;
             color: var(--tab-text-color);
             border: none;
             padding: 0.8rem 1.2rem;
@@ -151,12 +152,12 @@
         }
 
         .tab-button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(200, 81, 35, 0.2);
         }
 
         .tab-button.active {
             background-color: var(--active-tab-bg);
-            color: var(--header-color); /* Color oscuro para el texto activo */
+            color: var(--active-tab-text-color);
             font-weight: 700;
         }
 
@@ -168,7 +169,7 @@
         .tab-content.active {
             display: block;
         }
-        
+
         @media (max-width: 600px) {
             body {
                 padding: 1rem;
@@ -287,7 +288,6 @@
             evt.currentTarget.className += " active";
         }
 
-        // Abrir la primera pestaña por defecto al cargar la página
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector(".tab-button").click();
         });
